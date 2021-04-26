@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
   final _firestore = FirebaseFirestore.instance;
 
-  Future<void> createNewUserData() {
+  Future<void> createNewUserData() async {
     _firestore.collection('users').doc(_auth.currentUser.uid).set({
       'name': 'User',
       'uid': _auth.currentUser.uid,
@@ -214,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           title: Text("Error"),
                                           content: Text(err.message),
                                           actions: [
-                                            FlatButton(
+                                            TextButton(
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
@@ -265,7 +265,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             content: Text(
                                                 "The password reset email has been sent!"),
                                             actions: [
-                                              FlatButton(
+                                              TextButton(
                                                 onPressed: () {
                                                   Navigator.of(context).pop();
                                                 },

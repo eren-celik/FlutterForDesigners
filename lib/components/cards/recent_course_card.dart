@@ -3,11 +3,17 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-class RecentCourseCard extends StatelessWidget {
+// ignore: must_be_immutable
+class RecentCourseCard extends StatefulWidget {
   RecentCourseCard({this.course});
 
   Course course;
 
+  @override
+  _RecentCourseCardState createState() => _RecentCourseCardState();
+}
+
+class _RecentCourseCardState extends State<RecentCourseCard> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -18,19 +24,10 @@ class RecentCourseCard extends StatelessWidget {
           child: Container(
             width: 240,
             height: 240,
-            decoration: BoxDecoration(
-                gradient: course.background,
-                borderRadius: BorderRadius.circular(41.0),
-                boxShadow: [
-                  BoxShadow(
-                      color: course.background.colors[0].withOpacity(0.3),
-                      offset: Offset(0, 20),
-                      blurRadius: 30.0),
-                  BoxShadow(
-                      color: course.background.colors[1].withOpacity(0.3),
-                      offset: Offset(0, 20),
-                      blurRadius: 30.0)
-                ]),
+            decoration: BoxDecoration(gradient: widget.course.background, borderRadius: BorderRadius.circular(41.0), boxShadow: [
+              BoxShadow(color: widget.course.background.colors[0].withOpacity(0.3), offset: Offset(0, 20), blurRadius: 30.0),
+              BoxShadow(color: widget.course.background.colors[1].withOpacity(0.3), offset: Offset(0, 20), blurRadius: 30.0)
+            ]),
             child: Column(
               children: [
                 Padding(
@@ -43,9 +40,9 @@ class RecentCourseCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Hero(
-                        tag: course.courseSubtitle,
+                        tag: widget.course.courseSubtitle,
                         child: Text(
-                          course.courseSubtitle,
+                          widget.course.courseSubtitle,
                           style: kCardSubtitleStyle,
                         ),
                       ),
@@ -53,9 +50,9 @@ class RecentCourseCard extends StatelessWidget {
                         height: 6.0,
                       ),
                       Hero(
-                        tag: course.courseTitle,
+                        tag: widget.course.courseTitle,
                         child: Text(
-                          course.courseTitle,
+                          widget.course.courseTitle,
                           style: kCardTitleStyle,
                         ),
                       ),
@@ -65,10 +62,10 @@ class RecentCourseCard extends StatelessWidget {
                 Expanded(
                   child: Hero(
                     child: Image.asset(
-                      'asset/illustrations/${course.illustration}',
+                      'asset/illustrations/${widget.course.illustration}',
                       fit: BoxFit.cover,
                     ),
-                    tag: course.illustration,
+                    tag: widget.course.illustration,
                   ),
                 ),
               ],
@@ -79,18 +76,15 @@ class RecentCourseCard extends StatelessWidget {
           padding: EdgeInsets.only(right: 42.0),
           child: Container(
             child: Hero(
-              child: Image.asset('asset/logos/${course.logo}'),
-              tag: course.logo,
+              child: Image.asset('asset/logos/${widget.course.logo}'),
+              tag: widget.course.logo,
             ),
             width: 60.0,
             height: 60.0,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18.0),
-              boxShadow: [
-                BoxShadow(
-                    color: kShadowColor, offset: Offset(0, 4), blurRadius: 16.0)
-              ],
+              boxShadow: [BoxShadow(color: kShadowColor, offset: Offset(0, 4), blurRadius: 16.0)],
             ),
             padding: EdgeInsets.all(12.0),
           ),

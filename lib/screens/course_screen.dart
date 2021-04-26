@@ -26,9 +26,7 @@ class _CourseScreenState extends State<CourseScreen> {
         width: 7.0,
         height: 7.0,
         margin: EdgeInsets.symmetric(horizontal: 6.0),
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: i == 0 ? Color(0xFF0971FE) : Color(0xFFA6AEBD)),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: i == 0 ? Color(0xFF0971FE) : Color(0xFFA6AEBD)),
       ));
     }
 
@@ -73,14 +71,12 @@ class _CourseScreenState extends State<CourseScreen> {
               children: [
                 Stack(
                   alignment: Alignment.bottomRight,
-                  overflow: Overflow.clip,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(bottom: 20.0),
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.5,
-                        decoration:
-                            BoxDecoration(gradient: widget.course.background),
+                        decoration: BoxDecoration(gradient: widget.course.background),
                       ),
                     ),
                     Container(
@@ -101,10 +97,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                       padding: EdgeInsets.all(10.0),
                                       width: 60.0,
                                       height: 60.0,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(18.0)),
+                                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(18.0)),
                                       child: Hero(
                                         child: Image.asset(
                                           'asset/logos/${widget.course.logo}',
@@ -117,24 +110,20 @@ class _CourseScreenState extends State<CourseScreen> {
                                     ),
                                     Expanded(
                                       child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Hero(
                                             tag: widget.course.courseSubtitle,
                                             child: Text(
                                               widget.course.courseSubtitle,
-                                              style: kSecondaryCalloutLabelStyle
-                                                  .copyWith(
-                                                      color: Colors.white70),
+                                              style: kSecondaryCalloutLabelStyle.copyWith(color: Colors.white70),
                                             ),
                                           ),
                                           Hero(
                                             tag: widget.course.courseTitle,
                                             child: Text(
                                               widget.course.courseTitle,
-                                              style: kLargeTitleStyle.copyWith(
-                                                  color: Colors.white),
+                                              style: kLargeTitleStyle.copyWith(color: Colors.white),
                                             ),
                                           )
                                         ],
@@ -148,13 +137,10 @@ class _CourseScreenState extends State<CourseScreen> {
                                         width: 36.0,
                                         height: 36.0,
                                         decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          color: kPrimaryLabelColor
-                                              .withOpacity(0.8),
+                                          borderRadius: BorderRadius.circular(12.0),
+                                          color: kPrimaryLabelColor.withOpacity(0.8),
                                         ),
-                                        child: Icon(Icons.close,
-                                            color: Colors.white),
+                                        child: Icon(Icons.close, color: Colors.white),
                                       ),
                                     )
                                   ],
@@ -224,9 +210,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                 padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   child: Icon(
-                                    Platform.isAndroid
-                                        ? Icons.people
-                                        : CupertinoIcons.group_solid,
+                                    Platform.isAndroid ? Icons.people : CupertinoIcons.group_solid,
                                     color: Colors.white,
                                   ),
                                   radius: 21.0,
@@ -270,9 +254,7 @@ class _CourseScreenState extends State<CourseScreen> {
                                 padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   child: Icon(
-                                    Platform.isAndroid
-                                        ? Icons.format_quote
-                                        : CupertinoIcons.news_solid,
+                                    Platform.isAndroid ? Icons.format_quote : CupertinoIcons.news_solid,
                                     color: Colors.white,
                                   ),
                                   radius: 21.0,
@@ -311,8 +293,7 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 28.0, vertical: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 24.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

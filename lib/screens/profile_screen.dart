@@ -82,7 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: Text("Success!"),
               content: Text("The profile data has been updated!"),
               actions: [
-                FlatButton(
+                TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: Text("Uh-Oh!"),
               content: Text("$err"),
               actions: [
-                FlatButton(
+                TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -216,7 +216,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         ],
                                       ),
                                       actions: [
-                                        FlatButton(
+                                        TextButton(
                                             onPressed: () {
                                               Navigator.of(context).pop();
                                               updateUserData();
@@ -303,12 +303,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "${name}",
+                                "$name",
                                 style: kTitle2Style,
                               ),
                               SizedBox(height: 8.0),
                               Text(
-                                "${bio}",
+                                "$bio",
                                 style: kSecondaryCalloutLabelStyle,
                               ),
                             ],
